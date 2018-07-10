@@ -1,6 +1,15 @@
-FROM python:3
-RUN pip install "devpi-server>=2.5,<2.6dev" "devpi-client>=2.3,<=2.4dev"
+FROM python:3.6
+
+ENV DEVPI_SERVERDIR=/mnt/server \
+    DEVPI_CLIENTDIR=/mnt/client \
+    DEVPI_MIRROR_CACHE_EXPIRY=86400
+
+COPY ["requirements.txt", "logger_cfg.json", "run.sh", "/"]
+
+RUN pip install --no-cache-dir -r /requirements.txt && \
+    rm /requirements.txt
+
 VOLUME /mnt
 EXPOSE 3141
-ADD run.sh /
+
 CMD ["/run.sh"]
