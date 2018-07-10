@@ -25,7 +25,7 @@ some changes inspired by [yohanswanepoel/openshift-devpi](https://github.com/yoh
    `docker pull dreizehnelf/docker-devpi-web`
 
    (alternatively, you can build an image from Dockerfile:
-   `docker build -t="dreizehnelf/docker-devpi-web" github.com/dreizehnelf/docker-devpi-web`)
+   `docker build -t="dreizehnelf/docker-devpi-web" github.com/dreizehnelf/docker-devpi`)
 
 ## Usage
 
